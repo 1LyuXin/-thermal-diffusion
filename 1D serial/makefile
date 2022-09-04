@@ -1,9 +1,10 @@
-all : 1D_serial
+all : main
 .PHONY : clean
-1D_serial : 
-	g++ -o 1D_serial 1D_serial.o
-	
-1D_serial.o :1D_serial.cpp
+main : main.o
+	g++ -o main main.o
+
+main.o : main.cpp
+ 
 clean : 
-	rm    1D_serial
+	rm    main
 	rm    *.o
