@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[])
 {
-	int N = 100000;
+	int N = 1000;
 	float boundTemp = 10;
 	float v = 0;
 	float vv = 0.1;
