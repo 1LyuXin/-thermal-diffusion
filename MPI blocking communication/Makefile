@@ -1,7 +1,7 @@
 all : diffusion
 .PHONY : clean
 diffusion :
-        mpic++ -o diffusion diffusion.cpp
+        mpic++ -o diffusion diffusion.cpp -lm
 
 clean :
         rm    diffusion
