@@ -1,8 +1,9 @@
-all : diffusion_nonblocking
+all : diffusion
 .PHONY : clean
-diffusion_nonblocking :
-        mpic++ -o diffusion_nonblocking diffusion_nonblocking.cpp
+diffusion :
+        mpic++ -o diffusion diffusion.cpp -lm
 
 clean :
-        rm    diffusion_nonblocking
+        rm    diffusion
         rm    *.o
+
