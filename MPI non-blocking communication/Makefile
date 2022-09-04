@@ -1,22 +1,8 @@
-CC       =  gcc
+all : diffusion_nonblocking
+.PHONY : clean
+diffusion_nonblocking :
+        mpic++ -o diffusion_nonblocking diffusion_nonblocking.cpp
 
-CFLAGS   = -O3 -Wall -pg
-
-CPPFLAGS = -MMD
-
-SRC		 = field.c gauss_seidel.c print.c boundaries.c
-
-OBJS     =	$(SRC:.c=.o)
-
-DEP      =	$(SRC:.c=.d)
-
-EXECS    =laplace
-
-laplace: laplace.o	$(OBJS)
-	$(CC) -o $@ $^ $(CFLAGS) $(CPPFLAGS) -lm
-
--include	${DEP}
-
-.PHONY: clean
-clean:
-	-rm *.o *.d$(EXECS)
+clean :
+        rm    diffusion_nonblocking
+        rm    *.o
