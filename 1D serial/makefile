@@ -1,8 +1,9 @@
-all : main
+all : 1D_serial
 .PHONY : clean
-main : 
-	mpicxx -o main main.c
- 
+1D_serial : 
+	g++ -o 1D_serial 1D_serial.o
+	
+1D_serial.o :1D_serial.cpp
 clean : 
-	rm    main
+	rm    1D_serial
 	rm    *.o
