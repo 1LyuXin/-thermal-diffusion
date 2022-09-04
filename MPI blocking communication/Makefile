@@ -1,13 +1,9 @@
-CC       =  gcc
+all : diffusion
+.PHONY : clean
+diffusion :
+        mpic++ -o diffusion diffusion.cpp
 
-CFLAGS   = -O3 -Wall -pg
+clean :
+        rm    main
+        rm    *.o
 
-OBJS = boundaries.o field.o gauss_seidel.o print.o
-
-sor_prof: laplace.c ${OBJS} 
-	${CC} ${CFLAGS} -o sor_prof laplace.c ${OBJS} -lm
-
-
-.PHONY: clean
-clean:
-	-rm *.o *.d$(EXECS)
